@@ -5,17 +5,21 @@
     width: 100%;
     height: 100vh;
     z-index: 10;
-    background-color: #1e0973a3;
+    background-color: #1c066cc9;
 }
 .e1{
    position: fixed;
     overflow: hidden;
     width: 30rem;
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 3rem auto;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+ 
  text-align: center;
  background: #ffffff;
- margin-left: -32px;
+ 
   padding: 2rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -26,3 +30,4 @@
     padding: 5px 10px;
     font-size: 14px;
   }
+  

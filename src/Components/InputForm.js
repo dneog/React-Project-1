@@ -18,7 +18,7 @@ function InputForm({tasks, setTasks}){
         }
         setUsername('');
         setAge('');
-       setTasks([...tasks, task])
+      
 
        if(username.trim().length===0 || age.trim().length===0){
         setError({
@@ -36,6 +36,7 @@ function InputForm({tasks, setTasks}){
         });
         return;
        }
+       setTasks([...tasks, task])
     }
 
     function handleUsername(event){
@@ -63,6 +64,7 @@ function InputForm({tasks, setTasks}){
         </div>
        
        </form>
+        
        </div>
        
     );
