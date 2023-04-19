@@ -7,6 +7,7 @@ import ErrorMessage from './ErrorMessage';
 
 function InputForm({tasks, setTasks}){
     const [username, setUsername]= useState('');
+    const [collegeName, setCollegeName]= useState('');
     const [age, setAge]= useState('');
     const [error, setError]= useState()
 
@@ -14,16 +15,18 @@ function InputForm({tasks, setTasks}){
         event.preventDefault();
         const task={
             name : username,
-            age : age
+            age : age,
+            college: collegeName
         }
         setUsername('');
         setAge('');
+        setCollegeName('');
       
 
-       if(username.trim().length===0 || age.trim().length===0){
+       if(username.trim().length===0 || age.trim().length===0 || collegeName.trim().length===0){
         setError({
             title: 'Invalid Error',
-            message: 'Please Enter a valid name and Age'
+            message: 'Please Enter a valid name, age and college name'
 
         });
         return; 
@@ -43,6 +46,10 @@ function InputForm({tasks, setTasks}){
        setUsername(event.target.value);
        
     }
+    function handleCollegeName(event){
+       setCollegeName(event.target.value);
+       
+    }
     function handleAge(event){
        setAge(event.target.value);
        
@@ -58,6 +65,8 @@ function InputForm({tasks, setTasks}){
         <div className="form-control">
             <label className='label' htmlFor="">Username</label>
             <input className='input' type="text" onChange={handleUsername} value={username} name='name' />
+            <label className='label' htmlFor="">Collage Name</label>
+            <input className='input' type="text" onChange={handleCollegeName} value={collegeName} name='college' />
             <label className='label' htmlFor="">Age (Years)</label>
             <input className='input' type="number" onChange={handleAge} value={age} name='age' />
             <button type='submit' className='button'>Add User</button>

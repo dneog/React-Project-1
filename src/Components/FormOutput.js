@@ -5,7 +5,7 @@ function FormOutput({tasks}){
     return(
         <ul className='ul'>
          { tasks.map((task) => (
-            <li className='li'><span>{task.name} ({task.age} Years old)</span></li>
+            <li className='li'><span>{task.name} ({task.age} Years old)  -  {task.college}</span></li>
           ))}
         </ul>
     )
