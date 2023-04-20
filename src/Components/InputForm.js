@@ -23,10 +23,18 @@ function InputForm({tasks, setTasks}){
         setCollegeName('');
       
 
-       if(username.trim().length===0 || age.trim().length===0 || collegeName.trim().length===0){
+       if(username.trim().length===0 || age.trim().length===0 ){
         setError({
             title: 'Invalid Error',
             message: 'Please Enter a valid name, age and college name'
+
+        });
+        return; 
+       }
+       if(collegeName.trim().length===0 ){
+        setError({
+            title: 'Invalid Error',
+            message: 'Please Enter a valid College name'
 
         });
         return; 
